@@ -44,10 +44,6 @@ class App extends Component {
     const Tiles = [...this.state.Tiles];
     this.shuffle(Tiles);
 
-    //// FIRST - check it against alreadyClicked
-    //// IF alreadyClicked - startover
-    //// IF NOT alreadyClicked - points!
-
     if (this.alreadyClicked.includes(gif)) {
       console.log("ya clicked dis already dummy");
 
@@ -67,9 +63,6 @@ class App extends Component {
       
     }
 
-    //DON'T shuffle(this.state.Tiles) BAD
-    //DON'T modify state directly => this.state.Points = 123; BAD
-
     this.setState({
       Tiles,
       Points,
@@ -84,8 +77,7 @@ class App extends Component {
       <div className="col-3">
         <GifTile
           value={val}
-          src={`badurl`}
-          // src={`./GifSource/${val}.gif`}
+          src={`./GifSource/${val}.gif`}
           onClick={() => this.handleClick(val)}
         />
       </div>
